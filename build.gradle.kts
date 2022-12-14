@@ -12,6 +12,7 @@ repositories {
     mavenCentral()
 
     maven { url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") }
+    maven { url = uri("https://hub.spigotmc.org/nexus/content/repositories/public/") }
     maven { url = uri("https://repo.panda-lang.org/releases") }
 }
 
@@ -24,8 +25,9 @@ dependencies {
 
     implementation("dev.rollczi.litecommands:bukkit-adventure:2.7.0")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testImplementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 }
 
 tasks.getByName<Test>("test") {
@@ -37,21 +39,12 @@ tasks.withType<JavaCompile> {
 }
 
 bukkit {
-    main = "com.eternalcode.core.EternalCore"
+    main = "dev.rollczi.litescheduledaction.LiteScheduledAction"
     apiVersion = "1.13"
-    prefix = "EternalCore"
-    author = "EternalCodeTeam"
-    name = "EternalCore"
-    description = "All the most important server functions in one!"
+    prefix = "LiteScheduledAction"
+    author = "Rollczi"
+    name = "LiteScheduledAction"
     version = "${project.version}"
-    softDepend = listOf("PlaceholderAPI")
-    libraries = listOf(
-            "org.postgresql:postgresql:42.5.1",
-            "com.h2database:h2:2.1.214",
-            "com.j256.ormlite:ormlite-jdbc:6.1",
-            "com.zaxxer:HikariCP:5.0.1",
-            "org.mariadb.jdbc:mariadb-java-client:3.1.0"
-    )
 }
 
 
@@ -62,7 +55,7 @@ tasks {
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
-    archiveFileName.set("EternalCore v${project.version} (MC 1.17-1.19x).jar")
+    archiveFileName.set("LiteScheduledAction v${project.version} (MC 1.17-1.19x).jar")
 
     exclude(
             "org/intellij/lang/annotations/**",
@@ -75,7 +68,7 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     mergeServiceFiles()
     minimize()
 
-    val prefix = "com.eternalcode.core.libs"
+    val prefix = "dev.rollczi.litescheduledaction.libs"
     listOf(
             "panda",
             "org.panda_lang",
