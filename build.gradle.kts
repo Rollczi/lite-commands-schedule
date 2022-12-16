@@ -20,6 +20,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
     implementation("net.kyori:adventure-platform-bukkit:4.2.0")
     implementation("net.kyori:adventure-text-minimessage:4.12.0")
+    implementation("com.google.code.gson:gson:2.10")
 
     implementation("net.dzikoysk:cdn:1.14.1")
 
@@ -50,7 +51,7 @@ bukkit {
 
 tasks {
     runServer {
-        minecraftVersion("1.19.2")
+        minecraftVersion("1.19.3")
     }
 }
 
@@ -72,15 +73,10 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     listOf(
             "panda",
             "org.panda_lang",
-            "org.bstats",
             "net.dzikoysk",
-            "dev.rollczi",
+            "dev.rollczi.litecommands",
             "net.kyori",
-            "io.papermc.lib",
-            "dev.triumphteam",
-            "org.slf4j",
             "com.google.gson",
-            "com.eternalcode.containers"
     ).forEach { pack ->
         relocate(pack, "$prefix.$pack")
     }

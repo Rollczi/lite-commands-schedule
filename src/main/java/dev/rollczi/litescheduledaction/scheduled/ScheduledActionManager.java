@@ -35,6 +35,10 @@ public class ScheduledActionManager {
             LocalDateTime scheduleBeforeMoment = scheduleMoment.minus(SCHEDULE_BEFORE);
 
             if (now.isAfter(scheduleBeforeMoment) || now.isEqual(scheduleBeforeMoment)) {
+                if (now.isBefore(scheduleMoment)) {
+                    continue;
+                }
+
                 Result<Action, String> result = this.parserService.parse(scheduledAction.getRawAction());
 
                 if (result.isErr()) {

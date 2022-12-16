@@ -42,7 +42,9 @@ class LiteScheduledActionSettings implements Reloadable, ActionTeleportRepositor
     public ScheduledAction createOrUpdate(String name, String action, LocalDate date, LocalTime time) {
         ScheduledActionSection scheduledActionSection = new ScheduledActionSection(name, action, date, time);
 
-        this.scheduledActions.put(name, scheduledActionSection);
+        Map<String, ScheduledAction> newScheduledActions = new HashMap<>(scheduledActions);
+        newScheduledActions.put(name, scheduledActionSection);
+        scheduledActions = newScheduledActions;
 
         return scheduledActionSection;
     }
