@@ -24,7 +24,7 @@ dependencies {
 
     implementation("net.dzikoysk:cdn:1.14.1")
 
-    implementation("dev.rollczi.litecommands:bukkit-adventure:2.7.0")
+    implementation("dev.rollczi.litecommands:bukkit-adventure:2.8.9")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testImplementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
