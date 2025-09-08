@@ -22,7 +22,7 @@ dependencies {
     implementation("net.kyori:adventure-text-minimessage:4.12.0")
     implementation("com.google.code.gson:gson:2.10")
 
-    implementation("net.dzikoysk:cdn:1.14.1")
+    implementation("net.dzikoysk:cdn:1.14.9")
 
     implementation("dev.rollczi.litecommands:bukkit-adventure:2.7.0")
 
