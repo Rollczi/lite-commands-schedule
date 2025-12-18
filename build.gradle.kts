@@ -19,7 +19,7 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
     implementation("net.kyori:adventure-platform-bukkit:4.2.0")
-    implementation("net.kyori:adventure-text-minimessage:4.12.0")
+    implementation("net.kyori:adventure-text-minimessage:4.26.1")
     implementation("com.google.code.gson:gson:2.10")
 
     implementation("net.dzikoysk:cdn:1.14.1")
