@@ -28,7 +28,7 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testImplementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.14.3")
 }
 
 tasks.getByName<Test>("test") {
